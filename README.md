@@ -10,3 +10,5 @@ Having a homelab will further my knowledge in networking and especially Kubernet
 - Make sure my network is secure
 - The pro and cons of a cluster server
 - How I can improve my homelab and move on to a bigger system. 
+
+# Index
