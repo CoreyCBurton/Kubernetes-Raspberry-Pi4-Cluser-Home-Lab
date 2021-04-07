@@ -16,3 +16,6 @@ worth watching.
 - 1 [NETGEAR 5-Port Gigabit Ethernet Unmanaged PoE Switch](https://www.amazon.com/gp/product/B01MRO4M73/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 - 1 [Techson 4 Layers Clear Acrylic Rack Case for Raspberry Pi 4B / 3B / 3B+](https://www.amazon.com/gp/product/B07TLSVTQP/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1)
 - **please note** I found this case to be very medicore. It still works for what needs to be done. 
+
+# Installing the PoE hats on the Raspberry Pi
+![6339655_sd](https://user-images.githubusercontent.com/81980702/113816564-a1009780-973a-11eb-9993-ff2778ba9ec0.jpeg)
