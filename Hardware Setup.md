@@ -22,3 +22,5 @@ The PoE hats that are linked in the hardware used include a fan which has had mi
 high pitch noise but personally, it didn't bother me. The hats are easy to install, they fit into the General Purpose input/output (GPIO) pins which is shown below. ![RaspberryPi_Hat](https://user-images.githubusercontent.com/81980702/113817787-7ca5ba80-973c-11eb-89ee-5727cf8fe655.jpeg)
 When installing the PoE hat, make sure you put even pressure among the pins, it does require a bit of force. With enough caution, it should just slide on like a glove and you are ready for the next step. Your Raspberry Pis now have PoE. 
 
+# Formatting the SD cards 
+The software used to format the SD cards was the [offical Raspberry Pi Imager](https://www.raspberrypi.org/software/). It was easy to use, you plug the sd card into the computer and select the storage in the drop down menu on the Pi imager. This build is going to use **Ubuntu Server 20.044.2 LTS (64-bit)** which is an option you can choose in the drop down menu of the operating system in the Pi imager program. Once you write it, then you are ready to put it in the Raspberry Pi. 
