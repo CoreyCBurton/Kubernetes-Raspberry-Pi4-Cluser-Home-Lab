@@ -23,3 +23,7 @@ cgroup_enable=memory
 swapaccount=1
 
 ```
+# Getting the IP adress from the Raspberry Pi.
+If you know how to navigate around your router and you have the Raspberry Pi hooked up to your switch properly, then you can most likely find the ip under Ubuntu in your router settings. If you want to find the ip using the terminal, follow these steps. Type in the console ``` ip a ```. Looking at what the console returned, find **eth0** look for inet. There is a set of numbers that ussaly starts with ** 192.xxx.x.xxx. This is the ip address for the Pi you just set up. Next step is too add the SSH key.
+
+# Adding the SSH key to your Raspberry Pi.
