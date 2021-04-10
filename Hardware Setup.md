@@ -31,6 +31,6 @@ The software used to format the SD cards was the [offical Raspberry Pi Imager](h
 
 > The PoE hats show of their charm here. The setup doesnt take up too much space.
 
-![IMG_0635](https://user-images.githubusercontent.com/81980702/114279722-b7894600-99fb-11eb-8512-42db22caf196.JPG)
+![IMG_0635](https://user-images.githubusercontent.com/81980702/114279752-d25bba80-99fb-11eb-91e0-f766f4f4467f.JPG)
 
 > The PoE hats fit snug as seen in the image above.
