@@ -18,3 +18,69 @@ If you know how to navigate around your router and you have the Raspberry Pi hoo
 
 # Setting the master node and SSH keys.
 Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next set up is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated which sercures the network. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts, the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
+
+# Setting up K3sup 
+The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The github page has alot of information and a very good README file to answer any questions. To start off make sure you are on the master node that you set up eariler, the first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter:
+```
+curl -sLS https://get.k3sup.dev | sh # This line transfers the data from github which allows k3sup to be installed onto /usr/local/bin/
+sudo install k3sup /usr/local/bin/ # This insalls k3sup from directory /usr/local/bin
+
+k3ssup --help # If you have questions, use this command to pull up various commands. 
+```
+Once everything is done, you should see a red logo showing "K3sup" that list no errors. Just to make sure it is installed, you can always type in the terimnal ``` k3sup version ```
+<img width="375" alt="Screen Shot 2021-04-11 at 2 13 52 AM" src="https://user-images.githubusercontent.com/81980702/114295615-efc86d00-9a6b-11eb-9060-f2738b4d05c5.png">
+> What K3sup version returns in the terminal. 
+
+# Setting up the cluster.
+ The first step we have to do init the master node with K3sup. The command below shows what you have to do. 
+ ```
+ k3sup install --ip <MASTER_NODE> --user ubuntu
+ 
+ ```
+ Lets break it down.
+ ``` 
+ k3sup install # Bootstraps Kubernetes with k3u
+ --ip # sets the ip for the master node
+ --user # States the user, Ubuntu was used for me but root is also common.
+ ``` 
+ Now that we have initated the master node, it is time to add the other Raspberry Pis to the cluster. The command below initates it.
+ 
+ ```  
+ k3sup join --ip <NODE_IP> --server-ip <MASTER_NODE> --user ubuntu
+ ``` 
+ lets break it down
+ ``` 
+ k3sup join # This initates the join command to enter the master node 
+ --ip # The ip that connect to the master node 
+ --server-ip # The master node ip that inits the cluster
+ --user # states the user
+ ``` 
+ Once you add each Raspberry Pi to the server than it is setup! To make it more effiecnt there is a way to automate it through a script.
+ 
+ # Script to init the cluster server
+ Avery Wagar, the OP that posted on r/homelabs whose [blog](https://averywagar.com/post/k3s-pi/) inspired me to do this bulid wrote a scipt to automate this process. Below is the script he has created called **init_pis.sh**.
+ 
+ ``` 
+ #!/bin/bash
+
+MASTER_NODE=$1
+NODE1=$2
+NODE2=$3
+NODE3=$4
+
+# Init MASTER_NODE
+echo "Initializing $MASTER_NODE as master node."
+k3sup install --ip $MASTER_NODE --user ubuntu
+
+# Join nodes
+for NODE_IP in $NODE1 $NODE2 $NODE3
+do
+  echo "Joining $NODE_IP to the cluster..."
+  k3sup join --ip $NODE_IP --server-ip $MASTER_NODE --user ubuntu
+done
+```
+to init, use this command below 
+```
+./init_pis.sh <master-ip> <node-ip> <node-ip> <node-ip>
+```
+You can do it manually but thanks to Avery and his talent, he has automated the process. 
