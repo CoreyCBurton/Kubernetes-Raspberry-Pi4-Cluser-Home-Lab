@@ -103,4 +103,4 @@ chairle   Ready    <none>   5m18s   v1.19.9+k3s1   192.168.1.19    <none>       
 alpha     Ready    master   69m     v1.19.9+k3s1   192.168.1.98    <none>        Ubuntu 20.04.2 LTS   5.4.0-1032-raspi   containerd://1.4.4-k3s1
 delta     Ready    <none>   3m36s   v1.19.9+k3s1   192.168.1.39    <none>        Ubuntu 20.04.2 LTS   5.4.0-1032-raspi   containerd://1.4.4-k3s1
 beta      Ready    <none>   13m     v1.19.9+k3s1   192.168.1.143   <none>        Ubuntu 20.04.2 LTS   5.4.0-1032-raspi   containerd://1.4.4-k3s1
-```
+``` 
