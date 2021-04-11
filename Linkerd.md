@@ -18,4 +18,5 @@ linkerd multicluster install | kubectl apply -f -
 curl -sL buoyant.cloud/install | sh
  export PATH=$PATH:/home/ubuntu/.linkerd2/bin
  
+ export KUBECONFIG=/home/ubuntu/kubeconfig  
  
