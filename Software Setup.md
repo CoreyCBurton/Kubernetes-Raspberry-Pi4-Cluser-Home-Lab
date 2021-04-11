@@ -28,6 +28,7 @@ sudo install k3sup /usr/local/bin/ # This insalls k3sup from directory /usr/loca
 k3ssup --help # If you have questions, use this command to pull up various commands. 
 ```
 Once everything is done, you should see a red logo showing "K3sup" that list no errors. Just to make sure it is installed, you can always type in the terimnal ``` k3sup version ```
+
 <img width="375" alt="Screen Shot 2021-04-11 at 2 13 52 AM" src="https://user-images.githubusercontent.com/81980702/114295615-efc86d00-9a6b-11eb-9060-f2738b4d05c5.png">
 > What K3sup version returns in the terminal. 
 
