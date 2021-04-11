@@ -86,3 +86,21 @@ to init, use this command below
 ./init_pis.sh <master-ip> <node-ip> <node-ip> <node-ip>
 ```
 You can do it manually but thanks to Avery and his talent, he has automated the process. 
+
+# Exporting the KUBECONFIG and showing the nodes in your cluster.
+Now that we initiated the cluster server, it is time to export the config so we can list the nodes. Input the command below to export. Keep in mind, your directory might be different that mine.
+```
+export KUBECONFIG=/home/ubuntu/kubeconfig
+```
+Now that the config is exported, use this command to show the nodes.
+```
+kubectl get nodes -o wide
+```
+The list of nodes should look like this.
+```
+NAME      STATUS   ROLES    AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
+chairle   Ready    <none>   5m18s   v1.19.9+k3s1   192.168.1.19    <none>        Ubuntu 20.04.2 LTS   5.4.0-1028-raspi   containerd://1.4.4-k3s1
+alpha     Ready    master   69m     v1.19.9+k3s1   192.168.1.98    <none>        Ubuntu 20.04.2 LTS   5.4.0-1032-raspi   containerd://1.4.4-k3s1
+delta     Ready    <none>   3m36s   v1.19.9+k3s1   192.168.1.39    <none>        Ubuntu 20.04.2 LTS   5.4.0-1032-raspi   containerd://1.4.4-k3s1
+beta      Ready    <none>   13m     v1.19.9+k3s1   192.168.1.143   <none>        Ubuntu 20.04.2 LTS   5.4.0-1032-raspi   containerd://1.4.4-k3s1
+```
