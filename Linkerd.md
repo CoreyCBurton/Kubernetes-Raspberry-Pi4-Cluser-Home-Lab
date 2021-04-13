@@ -17,25 +17,43 @@ to veryify that the CTL is installed, it is time to run a linkerd command throug
 > Server version: unavailable
 ```
 # Validate the cluster
-Before installing the Linkerd control plane, we have to valiadate that everything is in place. Run command ``` Linkerd check --pre ````.  
+Before installing the Linkerd control plane, we have to valiadate that everything is in place. Run command ``` Linkerd check --pre ```. If everything checks out with green check marks, you are reaady to move on. 
 
+# Installing the Control Plane
+Type this command in the console install the control plane.
 
+``` linkerd install | kubectl apply -f - ``` 
 
+The next step is to make sure that everything installed properly by using command ``` linkerd check ```, if not then you will have to troubleshoot to get everything correct.
 
+# Installing extensions 
+To start off, the **viz** extenstion is going to be used for this homelab. It is also known as "Prometheus" which is the dashboard and metric component for the cluster. To install viz, enter the command below.
 
-linkerd check --pre
-<img width="459" alt="Screen Shot 2021-04-11 at 4 47 46 PM" src="https://user-images.githubusercontent.com/81980702/114322424-cc420880-9ae5-11eb-8fbe-3efa0f41b1e4.png">
+``` 
+linkerd viz install | kubectl apply -f - # on-cluster metrics stack
+```
 
-linkerd install | kubectl apply -f -
-
-linkerd viz install | kubectl apply -f -
-
+# Optional extensions 
+The linkerd setup guide also has other recommendations for Linkerd. One of them is Jaeger; a tracing system which can list proxies. The command below is too install it.
+``` 
 linkerd jaeger install | kubectl apply -f -
-
-linkerd multicluster install | kubectl apply -f -
-
+```
+It also recommends multicluster components, install that, the the command below.
+```
+linkerd multicluster install | kubectl apply -f - # multi-cluster components
+```
+Linkerd also points out that you can install buoyant, a thrid party dashboard. it isnt required but feel free to install it with the command below. 
+```
 curl -sL buoyant.cloud/install | sh
- export PATH=$PATH:/home/ubuntu/.linkerd2/bin
- 
- export KUBECONFIG=/home/ubuntu/kubeconfig  
+linkerd buoyant install | kubectl apply -f -
+```
+# Opening Linkerd with viz
+After you choose what extensions to install, run ```linkerd check``` to make sure everything is validated. After that, run the command below and the dashboard will pull up. 
+```
+linkerd viz dashboard &
+
+```
+Now linkerd is installed onto your cluster.
+
+
  
