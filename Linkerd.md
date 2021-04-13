@@ -10,17 +10,18 @@ Afrer that runs through, you have to export the path which is in **/home/ubuntu/
 ``` 
 export PATH=$PATH:/home/ubuntu/.linkerd2/bin
 ```
-to veryify that the CTL is installed, it is time to run a linkerd command through. Use ```linkerd version``` and if it works, you should see this below.
+to veryify that the CTL is installed, we have to run a linkerd command. Use ```linkerd version``` and if it works, you should see this below.
 
 ```
 > Client version: stable-2.10.0
 > Server version: unavailable
 ```
+If everything worked correctly, it shows server version unavailable as of now. Dont worry, we still have more to set up. 
 # Validate the cluster
 Before installing the Linkerd control plane, we have to valiadate that everything is in place. Run command ``` Linkerd check --pre ```. If everything checks out with green check marks, you are reaady to move on. 
 
 # Installing the Control Plane
-Type this command in the console install the control plane.
+Type this command in the console to install the control plane.
 
 ``` linkerd install | kubectl apply -f - ``` 
 
@@ -51,7 +52,6 @@ linkerd buoyant install | kubectl apply -f -
 After you choose what extensions to install, run ```linkerd check``` to make sure everything is validated. After that, run the command below and the dashboard will pull up. 
 ```
 linkerd viz dashboard &
-
 ```
 Now linkerd is installed onto your cluster.
 
