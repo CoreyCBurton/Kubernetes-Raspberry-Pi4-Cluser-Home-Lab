@@ -1,4 +1,4 @@
-# Indroduction
+# Introduction
 Linkerd seems to work like a charm with this setup. My experience with it has been great so far. I am going to follow this guide on the offical [linkerd website](https://linkerd.io/2.10/getting-started/). If you have any other questions about your set up, they have an amazing guide so check it out. 
 
 # Installing Linkerd CTL 
