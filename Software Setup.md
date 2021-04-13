@@ -21,6 +21,11 @@ If you know how to navigate around your router and you have the Raspberry Pi hoo
 # Setting the master node and SSH keys.
 Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next set up is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated which sercures the network. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts, the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
 
+# Renaming your Raspberry Pis. (optional)
+In order to keep everything in order, I recommend naming your Raspberry Pis. I named my masternode "alpha" and contined labeling following "beta","charile",and "delta". In order to do this, you have to go into root by typing the command `sudo su`. After that type in this command below. 
+```
+sudo echo <NAME> > /etc/hostname
+```
 # Setting up K3sup 
 The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The github page has alot of information and a very good README file to answer any questions. To start off make sure you are on the master node that you set up eariler, the first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter:
 ```
