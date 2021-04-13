@@ -12,6 +12,6 @@ Having a homelab will further my knowledge in networking and especially Kubernet
 - How I can improve my homelab and move on to a bigger system. 
 
 # Index
-[Hardware setup](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Hardware%20Setup.md)
-[Software setup (Installing Kubernetes)](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Software%20Setup.md)
-[Linkerd Mesh](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Linkerd.md)
+-[Hardware setup](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Hardware%20Setup.md)
+-[Software setup (Installing Kubernetes)](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Software%20Setup.md)
+-[Linkerd Mesh](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Linkerd.md)
