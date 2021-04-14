@@ -13,8 +13,8 @@ export PATH=$PATH:/home/ubuntu/.linkerd2/bin
 to veryify that the CTL is installed, we have to run a linkerd command. Use ```linkerd version``` and if it works, you should see this below.
 
 ```
-> Client version: v1.19.9+k3s1
-> Server version: v1.19.9+k3s1
+Client version: stable-2.10.0
+Server version: unavailable
 ```
 
 # Validate the cluster
