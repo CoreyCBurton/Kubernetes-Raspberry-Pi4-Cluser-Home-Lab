@@ -13,7 +13,7 @@ export PATH=$PATH:/home/ubuntu/.linkerd2/bin
 to veryify that the CTL is installed, we have to run a linkerd command. Use ```linkerd version``` and if it works, you should see this below.
 
 ```
-> Client version: stable-2.10.0
+> Client version: stable-v1.19.9+k3s1
 > Server version: unavailable
 ```
 If everything worked correctly, it shows server version unavailable as of now. Dont worry, we still have more to set up. 
