@@ -39,7 +39,7 @@ The linkerd setup guide also has other recommendations for Linkerd. One of them 
 ``` 
 linkerd jaeger install | kubectl apply -f -
 ```
-It also recommends multicluster components, install that, the the command below.
+It also recommends multicluster components, to install that, use the command below.
 ```
 linkerd multicluster install | kubectl apply -f - # multi-cluster components
 ```
