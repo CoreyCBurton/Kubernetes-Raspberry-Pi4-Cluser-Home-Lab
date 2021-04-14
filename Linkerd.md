@@ -48,6 +48,19 @@ Linkerd also points out that you can install buoyant, a thrid party dashboard. i
 curl -sL buoyant.cloud/install | sh
 linkerd buoyant install | kubectl apply -f -
 ```
+# Seeing what is active
+Using command ``` Kubectl get ns ``` , you can see what is active. This homelab shows this
+```
+NAME                   STATUS   AGE
+default                Active   2d13h
+kube-system            Active   2d13h
+kube-public            Active   2d13h
+kube-node-lease        Active   2d13h
+linkerd-multicluster   Active   2d5h
+buoyant-cloud          Active   2d5h
+linkerd                Active   25h
+linkerd-viz            Active   24h
+```
 # Opening Linkerd with viz
 After you choose what extensions to install, run ```linkerd check``` to make sure everything is validated. After that, run the command below and the dashboard will pull up. 
 ```
