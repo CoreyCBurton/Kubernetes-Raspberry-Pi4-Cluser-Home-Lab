@@ -13,10 +13,10 @@ export PATH=$PATH:/home/ubuntu/.linkerd2/bin
 to veryify that the CTL is installed, we have to run a linkerd command. Use ```linkerd version``` and if it works, you should see this below.
 
 ```
-> Client version: stable-v1.19.9+k3s1
-> Server version: unavailable
+> Client version: v1.19.9+k3s1
+> Server version: v1.19.9+k3s1
 ```
-If everything worked correctly, it shows server version unavailable as of now. Dont worry, we still have more to set up. 
+
 # Validate the cluster
 Before installing the Linkerd control plane, we have to valiadate that everything is in place. Run command ``` Linkerd check --pre ```. If everything checks out with green check marks, you are reaady to move on. 
 
