@@ -26,6 +26,9 @@ In order to keep everything in order, I recommend naming your Raspberry Pis. I n
 ```
 sudo echo <NAME> > /etc/hostname
 ```
+# IMPORTANT! 
+do not set up the K3sup server on your node or Raspberry pi. It will lead to problems when trying to install Linkerd, the security mesh that goes along with K3sup. The kubeconfig file needs to be done on your local machine. You can connect to other machines using ``` ubuntu@<ip ``` but this should only be set up when you arent using kubectl. Lets move on. 
+
 # Setting up K3sup 
 The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The github page has alot of information and a very good README file to answer any questions. To start off make sure you are on the master node that you set up eariler, the first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter:
 ```
