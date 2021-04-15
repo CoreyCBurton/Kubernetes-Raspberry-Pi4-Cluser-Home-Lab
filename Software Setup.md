@@ -98,7 +98,7 @@ You can do it manually but thanks to Avery and his talent, he has automated the 
 # Exporting the KUBECONFIG and showing the nodes in your cluster.
 Now that we initiated the cluster server, it is time to export the config so we can list the nodes. Input the command below to export. Keep in mind, your directory might be different that mine.
 ```
-export KUBECONFIG=/home/ubuntu/kubeconfig
+export KUBECONFIG=/users/corey/kubeconfig
 ```
 Now that the config is exported, use this command to show the nodes.
 ```
