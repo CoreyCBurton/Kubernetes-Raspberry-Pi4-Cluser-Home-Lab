@@ -9,7 +9,7 @@ In order for Kubernetes to work, we will have to modify the **cmdline.txt** by e
 ```
 net.ifnames=0 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc
 ```
-Using the **nano** editor while in root or sudo, please add this code to the .txt file. I
+Using the **nano** editor while in root or sudo, please add this code to the .txt file. 
 ```
 cgroup_memory=1
 cgroup_enable=memory
@@ -19,7 +19,7 @@ swapaccount=1
 If you know how to navigate around your router and you have the Raspberry Pi hooked up to your switch properly, then you can find the ip under Ubuntu in your router settings. If you want to find the ip using the terminal, follow these steps. Type in the console ``` ip a ```. Looking at what the console returned, find **eth0** and **inet** is listed with a set of numbers that ussaly starts with **192.xxx.x.xxx**; This is the ip address for the Pi you just set up. Next step is too add the SSH key.
 
 # Setting the master node and SSH keys.
-Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next set up is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated which sercures the network. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts, the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
+Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next step is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated which sercures the network. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts, the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
 
 # Renaming your Raspberry Pis. (optional)
 In order to keep everything in order, I recommend naming your Raspberry Pis. I named my masternode "alpha" and contined labeling following "beta","charile",and "delta". In order to do this, you have to go into root by typing the command `sudo su`. After that type in this command below. 
@@ -27,10 +27,10 @@ In order to keep everything in order, I recommend naming your Raspberry Pis. I n
 sudo echo <NAME> > /etc/hostname
 ```
 # IMPORTANT! 
-do not set up the K3sup server on your node or Raspberry pi. It will lead to problems when trying to install Linkerd, the security mesh that goes along with K3sup. The kubeconfig file needs to be done on your local machine. You can connect to other machines using ``` ubuntu@<ip> ``` but this should only be set up when you arent using ``` kubectl```. Lets move on. 
+do not set up the K3sup server on your node or Raspberry pi. It will lead to problems when trying to install Linkerd, the security mesh that goes along with K3sup. The kubeconfig file needs to be done on your local machine. You can connect to other machines using ``` ubuntu@<ip> ``` but this should only be done to set up when you arent using ``` kubectl```. Lets move on. 
 
 # Setting up K3sup 
-The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The github page has alot of information and a very good README file to answer any questions. To start off make sure you are on the master node that you set up eariler, the first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter:
+The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The github page has alot of information and a very good README file to answer any questions. To start off make sure you are on the your local macine, **this is important**. The first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter:
 ```
 curl -sLS https://get.k3sup.dev | sh # This line transfers the data from github which allows k3sup to be installed onto /usr/local/bin/
 sudo install k3sup /usr/local/bin/ # This insalls k3sup from directory /usr/local/bin
