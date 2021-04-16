@@ -115,6 +115,6 @@ delta     Ready    <none>   22s     v1.19.9+k3s1   192.168.1.41    <none>       
 # Troubleshoot
 If you get an error stating 
 ```
-The connection to the server 192.168.1.75:6443 was refused - did you specify the right host or port?
+The connection to the server <ip> was refused - did you specify the right host or port?
 ```
 You have to make sure you that /boot/firmware/cmdline has the correct information. 
