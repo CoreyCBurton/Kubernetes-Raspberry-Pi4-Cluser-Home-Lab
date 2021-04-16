@@ -17,3 +17,7 @@ Having a homelab will further my knowledge in networking and especially Kubernet
 * [Software setup (Installing K3s)](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Software%20Setup.md)
 
 * [Linkerd Mesh](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Linkerd.md)
+
+* [Problems and Solutions](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Problems%20and%20Solutions.md)
+
+
