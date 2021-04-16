@@ -35,7 +35,7 @@ The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). T
 curl -sLS https://get.k3sup.dev | sh # This line transfers the data from github which allows k3sup to be installed onto /usr/local/bin/
 sudo install k3sup /usr/local/bin/ # This insalls k3sup from directory /usr/local/bin
 
-k3ssup --help # If you have questions, use this command to pull up various commands. 
+k3sup --help # If you have questions, use this command to pull up various commands. 
 ```
 Once everything is done, you should see a red logo showing "K3sup" that list no errors. Just to make sure it is installed, you can always type in the terimnal ``` k3sup version ```
 
@@ -49,7 +49,7 @@ Once everything is done, you should see a red logo showing "K3sup" that list no 
  ```
  Lets break it down.
  ``` 
- k3sup install # Bootstraps Kubernetes with k3u
+ k3sup install # Bootstraps Kubernetes with k3s
  --ip # sets the ip for the master node
  --user # States the user, Ubuntu was used for me but root is also common.
  ``` 
@@ -111,6 +111,5 @@ alpha     Ready      <none>   117m   v1.19.9+k3s1   192.168.1.76    <none>      
 delta     Ready      <none>   120m   v1.19.9+k3s1   192.168.1.17    <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
 chairle   Ready      <none>   121m   v1.19.9+k3s1   192.168.1.252   <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
 beta      Ready      master   126m   v1.19.9+k3s1   192.168.1.121   <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
-
 ``` 
 
