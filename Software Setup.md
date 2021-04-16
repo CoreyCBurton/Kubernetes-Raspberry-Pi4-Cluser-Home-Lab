@@ -22,15 +22,15 @@ If you know how to navigate around your router and you have the Raspberry Pi hoo
 Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next step is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated which sercures the network. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts, the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
 
 # Renaming your Raspberry Pis. (optional)
-In order to keep everything in order, I recommend naming your Raspberry Pis. I named my masternode "beta" and continued labeling following "alpha,"charile",and "delta". Alpha holds the kubeconfig. In order to do this, you have to go into root by typing the command `sudo su`. After that type in this command below. 
+In order to keep everything in order, I recommend naming your Raspberry Pis. I named my masternode "beta" and continued labeling following "alpha,"charile",and "delta". **Alpha holds the kubeconfig**. In order to do this, you have to go into root by typing the command `sudo su`. type the command below to change the name. 
 ```
 sudo echo <NAME> > /etc/hostname
 ```
 # IMPORTANT! 
-Keep track where you are installing the **kubeconfig**. As listed [here](https://github.com/alexellis/k3sup#getting-access-to-your-kubeconfig) in the orginal K3sup, it shows there can be a problem later on with ssh validation. The creator says to always run kubctl on another machine other than your nodes. 
+Keep track of where you are installing the **kubeconfig** which is where you run the script below. As listed [here](https://github.com/alexellis/k3sup#getting-access-to-your-kubeconfig) in the orginal K3sup, it shows there can be a problem later on with ssh validation if you try to use kubectl on your nodes. **Allows use kubectl on a local machien that has the kubeconfig file handy**.
 
 # Setting up K3sup 
-The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The github page has alot of information and a very good README file to answer any questions. To start off make sure you are on the your local macine, **this is important**. The first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter:
+The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The repo page has alot of information and a very good README file to answer any questions. To start off, make sure you are on the machine that you would like to store the kubeconfig file. **this is important**. The first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter
 ```
 curl -sLS https://get.k3sup.dev | sh # This line transfers the data from github which allows k3sup to be installed onto /usr/local/bin/
 sudo install k3sup /usr/local/bin/ # This insalls k3sup from directory /usr/local/bin
@@ -65,7 +65,7 @@ Once everything is done, you should see a red logo showing "K3sup" that list no 
  --server-ip # The master node ip that inits the cluster
  --user # states the user
  ``` 
- Once you add each Raspberry Pi to the server than it is setup! To make it more effiecnt there is a way to automate it through a script.
+ Once you add each Raspberry Pi to the server than it is setup! To make it more effiecnt, there is a way to automate it through a script.
  
  # Script to init the cluster server
  Avery Wagar, the OP that posted on r/homelabs whose [blog](https://averywagar.com/post/k3s-pi/) inspired me to do this bulid wrote a scipt to automate this process. Below is the script he has created called **init_pis.sh**.
@@ -96,9 +96,9 @@ to init, use this command below
 You can do it manually but thanks to Avery and his talent, he has automated the process. 
 
 # Exporting the KUBECONFIG and showing the nodes in your cluster.
-Now that we initiated the cluster server, it is time to export the config so we can list the nodes. Input the command below to export. Keep in mind, your directory might be different that mine.
+Now that we initiated the cluster server, it is time to export the config so we can list the nodes. Input the command below to export. 
 ```
-export KUBECONFIG=/home/ubuntu/kubeconfig
+export KUBECONFIG='pwd'/kubeconfig
 ```
 Now that the config is exported, use this command to show the nodes.
 ```
@@ -106,15 +106,11 @@ kubectl get nodes -o wide
 ```
 The list of nodes should look like this.
 ```
-NAME      STATUS   ROLES    AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
-beta      Ready    <none>   2m24s   v1.19.9+k3s1   192.168.1.144   <none>        Ubuntu 20.04.2 LTS   5.4.0-1028-raspi   containerd://1.4.4-k3s1
-alpha     Ready    master   27m     v1.19.9+k3s1   192.168.1.99    <none>        Ubuntu 20.04.2 LTS   5.4.0-1033-raspi   containerd://1.4.4-k3s1
-charlie   Ready    <none>   76s     v1.19.9+k3s1   192.168.1.20    <none>        Ubuntu 20.04.2 LTS   5.4.0-1028-raspi   containerd://1.4.4-k3s1
-delta     Ready    <none>   22s     v1.19.9+k3s1   192.168.1.41    <none>        Ubuntu 20.04.2 LTS   5.4.0-1028-raspi   containerd://1.4.4-k3s1
+NAME      STATUS     ROLES    AGE    VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
+alpha     Ready      <none>   117m   v1.19.9+k3s1   192.168.1.76    <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
+delta     Ready      <none>   120m   v1.19.9+k3s1   192.168.1.17    <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
+chairle   Ready      <none>   121m   v1.19.9+k3s1   192.168.1.252   <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
+beta      Ready      master   126m   v1.19.9+k3s1   192.168.1.121   <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
+
 ``` 
-# Troubleshoot
-If you get an error stating 
-```
-The connection to the server <ip> was refused - did you specify the right host or port?
-```
-You have to make sure you that /boot/firmware/cmdline has the correct information. 
+
