@@ -27,7 +27,7 @@ In order to keep everything in order, I recommend naming your Raspberry Pis. I n
 sudo echo <NAME> > /etc/hostname
 ```
 # IMPORTANT! 
-Keep track of where you are installing the **kubeconfig** which is where you run the script below. As listed [here](https://github.com/alexellis/k3sup#getting-access-to-your-kubeconfig) in the orginal K3sup, it shows there can be a problem later on with ssh validation if you try to use kubectl on your nodes. **Allows use kubectl on a local machien that has the kubeconfig file handy**.
+Keep track of where you are installing the **kubeconfig** which is where you run the script below. As listed [here](https://github.com/alexellis/k3sup#getting-access-to-your-kubeconfig) in the orginal K3sup, it shows there can be a problem later on with ssh validation if you try to use kubectl on your nodes. **Always use kubectl on a local machine that has the kubeconfig file handy**.
 
 # Setting up K3sup 
 The guide that I am using is from [K3sup](https://github.com/alexellis/k3sup). The repo page has alot of information and a very good README file to answer any questions. To start off, make sure you are on the machine that you would like to store the kubeconfig file. **this is important**. The first step is too install K3up on the OS. You have to enter **sudo su** which puts you into root, which allows you to access everything that needs to be done. Once you are in root, enter
