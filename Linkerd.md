@@ -6,7 +6,7 @@ Just like installing K3Sup, we have to install the command-line interface. This 
 ```
 curl -sL run.linkerd.io/install | sh
 ```
-Afrer that runs through, you have to export the path which is in **/home/ubuntu/.linkerd2/bin**. The command below does this. 
+Afrer that runs through, you have to export the path for **.linkerd2**. After setting up the curl, the terminal should give you the command but my path is shown below. 
 ``` 
 export PATH=$PATH:/home/<user>/.linkerd2/bin
 ```
@@ -18,7 +18,7 @@ Server version: unavailable
 ```
 
 # Validate the cluster
-Before installing the Linkerd control plane, we have to valiadate that everything is in place. Run command ``` Linkerd check --pre ```. If everything checks out with green check marks, you are ready to move on. 
+Before installing the Linkerd control plane, we have to valiadate that everything is in place. Run command ``` Linkerd check --pre ```. If everything is in place, green check marks will fill the screen. 
 
 # Installing the Control Plane
 Type this command in the console to install the control plane.
@@ -26,6 +26,7 @@ Type this command in the console to install the control plane.
 ``` linkerd install | kubectl apply -f - ``` 
 
 The next step is to make sure that everything installed properly by using command ``` linkerd check ```, if not then you will have to troubleshoot through the [Linkerd Website](https://linkerd.io/2.10/tasks/troubleshooting/) 
+
 # Installing extensions 
 To start off, the **viz** extenstion is going to be used for this homelab. It is also known as "Prometheus" which is the dashboard and metric component for the cluster. To install viz, enter the command below.
 
@@ -65,6 +66,8 @@ After you choose what extensions to install, run ```linkerd check``` to make sur
 ```
 linkerd viz dashboard &
 ```
+<img width="1440" alt="Screen Shot 2021-04-16 at 1 37 58 AM" src="https://user-images.githubusercontent.com/81980702/114982008-78705000-9e54-11eb-976c-39c9d834d1bb.png">
+
 Now linkerd is installed onto your cluster.
 
 
