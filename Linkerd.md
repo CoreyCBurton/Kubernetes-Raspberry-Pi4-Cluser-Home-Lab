@@ -8,7 +8,7 @@ curl -sL run.linkerd.io/install | sh
 ```
 Afrer that runs through, you have to export the path which is in **/home/ubuntu/.linkerd2/bin**. The command below does this. 
 ``` 
-export PATH=$PATH:/home/ubuntu/.linkerd2/bin
+export PATH=$PATH:/home/<user>/.linkerd2/bin
 ```
 to veryify that the CTL is installed, we have to run a linkerd command. Use ```linkerd version``` and if it works, you should see this below.
 
