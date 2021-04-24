@@ -107,7 +107,7 @@ kubectl get nodes -o wide
 The list of nodes should look like this.
 ```
 NAME      STATUS     ROLES    AGE    VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
-alpha     Ready      <master>  117m   v1.19.9+k3s1   192.168.1.76    <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
+alpha     Ready      <master> 117m   v1.19.9+k3s1   192.168.1.76    <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
 delta     Ready      <none>   120m   v1.19.9+k3s1   192.168.1.17    <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
 chairle   Ready      <none>   121m   v1.19.9+k3s1   192.168.1.252   <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
 beta      Ready      <none>   126m   v1.19.9+k3s1   192.168.1.121   <none>        Ubuntu 20.04.2 LTS   5.4.0-1034-raspi   containerd://1.4.4-k3s1
