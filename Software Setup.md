@@ -22,7 +22,7 @@ If you know how to navigate around your router and you have the Raspberry Pi hoo
 Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next step is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated which sercures the network. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts, the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
 
 # Renaming your Raspberry Pis. (optional)
-In order to keep everything in order, I recommend naming your Raspberry Pis. I named my masternode "beta" and continued labeling following "alpha,"charile",and "delta". **Alpha holds the kubeconfig**. In order to do this, you have to go into root by typing the command `sudo su`. type the command below to change the name. 
+In order to keep everything in order, I recommend naming your Raspberry Pis. I named my masternode "Alpha" and continued labeling following "Beta,"Charile",and "Delta". **Alpha holds the kubeconfig while I also have one on my local macbook**. In order to do this, you have to go into root by typing the command `sudo su`. type the command below to change the name. 
 ```
 sudo echo <NAME> > /etc/hostname
 ```
