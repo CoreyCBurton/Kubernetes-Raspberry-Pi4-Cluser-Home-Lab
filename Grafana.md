@@ -26,6 +26,16 @@ suffixDomain: `192.168.1.132.nip.io` ```
 # Installing make on MacOS
 * Using the command `` brew install make`` we can download the make tool which will allow us to finish installing Grafana. 
 
+# Installing Golang on MacOS
+Following this [guide](https://golang.org/doc/install). Download the package file and verify using the command below.
+```
+$ go version
+```
+# Installing command line tools 
+```
+xcode-select --install
+```
+
 # Installing Grafana
 ```
 $ make vendor
