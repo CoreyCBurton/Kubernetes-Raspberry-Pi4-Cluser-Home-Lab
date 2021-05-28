@@ -20,7 +20,7 @@ k3s:{
 ```
 Below that, The domain suffix needs to be editied to one of your worker nodes.
 ```
-suffixDomain: `192.168.1.132.nip.io` ```
+suffixDomain: `192.168.1.132.nip.io` 
 ```
 
 # Installing make on MacOS
