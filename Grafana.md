@@ -2,7 +2,7 @@
 Having Prometheus and Grafana on your Raspberry Pi is super important. Using Helm charts that are provided with Kubernetes, we can achieve this.
 
 # Cluster-monitoring
-Following this (repo)[https://github.com/carlosedp/cluster-monitoring], We can have an optimized Grafana-dashboard for our raspberry pi cluster. The first step is to clone the repo using the command below
+Following this [repo](https://github.com/carlosedp/cluster-monitoring), We can have an optimized Grafana-dashboard for our raspberry pi cluster. The first step is to clone the repo using the command below
 ```
 git clone https://github.com/carlosedp/cluster-monitoring.git
 ```
