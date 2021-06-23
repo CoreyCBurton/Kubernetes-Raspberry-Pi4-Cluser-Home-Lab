@@ -16,7 +16,8 @@ cgroup_enable=memory
 swapaccount=1
 ```
 # Getting the IP adress from the Raspberry Pi
-If you know how to navigate around your router and you have the Raspberry Pi hooked up to your switch properly, then you can find the ip under Ubuntu in your router settings. If you want to find the ip using the terminal, follow these steps. Type in the console ``` ip a ```. Looking at what the console returned, find **eth0** and **inet** is listed with a set of numbers that ussaly starts with **192.xxx.x.xxx**; This is the ip address for the Pi you just set up. Next step is too add the SSH key.
+- If you know how to navigate around your router and you have the Raspberry Pi hooked up to your switch properly, then you can find the ip under Ubuntu in your router settings. If you want to find the ip using the terminal, follow these steps. Type in the console ``` ip a ```. Looking at what the console returned, find **eth0** and **inet** is listed with a set of numbers that ussaly starts with **192.xxx.x.xxx**; This is the ip address for the Pi you just set up. Next step is too add the SSH key.
+  - If you have a linux distribution such as Kali Linux, you can also use the command ``netdiscover``to find the addresses to each PI.
 
 # Setting the master node and SSH keys.
 Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next step is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated which sercures the network. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts, the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
