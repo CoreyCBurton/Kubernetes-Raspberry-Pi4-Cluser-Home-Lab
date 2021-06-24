@@ -12,13 +12,16 @@ Having a homelab will further my knowledge in networking and especially Kubernet
 - How I can improve my homelab and move on to a bigger system. 
 
 # Index
-* [Hardware setup](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Hardware%20Setup.md)
+- Intial set up 
+  - [Hardware setup](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Hardware%20Setup.md)
+  - [Software setup (Installing K3s)](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Software%20Setup.md)
+  - [Problems and Solutions](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Problems%20and%20Solutions.md)
+  
+- Services added to cluster 
+  - [Linkerd Mesh](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Linkerd.md)
+  - [Grafana](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Grafana.md)
 
-* [Software setup (Installing K3s)](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Software%20Setup.md)
 
-* [Linkerd Mesh](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Linkerd.md)
-
-* [Problems and Solutions](https://github.com/CoreyCBurton/Kubernetes-Raspberry-Pi4-Cluser-Home-Lab/blob/main/Problems%20and%20Solutions.md)
 
 
 
