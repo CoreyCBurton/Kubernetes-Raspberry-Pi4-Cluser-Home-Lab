@@ -1,11 +1,17 @@
 # Introduction
-It is important to have a static ip address. This relates to the Kubeconfig file, it is set up for the specific IP addresses. 
+By default, Ubuntu server LTS has DCHP enabled. This guide will have steps to set a static ip which is necessary to keep the kubectl synchronized with the IP addresses setup at the start. 
 
-# Netplan directory
-- Go to the directory /etc/netplan
-- You will see files here. Make sure you dont chose the one with the cloud 
+# Netplan configuration
+- Go to the directory /etc/netplan.
+  - There should be some files listed. If there is a file such as ``50-cloud`` you can ignore this. 
+  - Make a new file using called ``01-network-manager.yaml`` 
+  - Please note the .yaml extenison and how it starts with 01
+# ip -a 
+It is important to see what adapter you are using through ip -a. This will vary from person to person. In my siutation, I am connected via eth0
 
-- Add this to the YAML file
+# Modifying .yaml file
+- Add this using the text edior vim or nano to set up the static ip address. '
+   - This is an example, please modify it how you would like.
 ```
 network:
   version: 2 
@@ -20,6 +26,6 @@ network:
          - 8.8.8.8
          - 8.8.4.4
 ```
-
+# Apply netplan
 -sudo netplan try 
 - sudo netplan apply 
