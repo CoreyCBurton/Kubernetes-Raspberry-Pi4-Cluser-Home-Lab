@@ -42,5 +42,7 @@ Error: unable to connect to 192.168.1.141:22 over ssh: ssh: handshake failed: ss
 ```
 To solve this, make sure you have ```ssh-copy-id ubuntu@<ip>``` and ```ssh-keygen``` every node before setting up. 
 
+# DHCP enabled on Ubuntu Servers
+- Ovetime, you will see that the IP adresses on your raspberry pis will change. This is because DHCP is enabled by default. View the static ip read me here.
 
 
