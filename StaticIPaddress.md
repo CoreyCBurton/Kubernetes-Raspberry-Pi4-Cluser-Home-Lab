@@ -14,17 +14,15 @@ It is important to see what adapter you are using through ip -a. This will vary 
    - This is an example, please modify it how you would like.
 ```
 network:
-  version: 2 
+  version: 2
   renderer: networkd
   ethernets:
-    eth0:
-      addresses:
-      - <ipaddress>
-      gateway4: 192.168.1.1
-      nameservers
-         addresses:
-         - 8.8.8.8
-         - 8.8.4.4
+    eth0::
+     dhcp4: no
+     addresses: [192.168.1.75/24]
+     gateway4: 192.168.1.1
+     nameservers:
+       addresses: [8.8.8.8,8.8.4.4]
 ```
 # Apply netplan
 -sudo netplan try 
