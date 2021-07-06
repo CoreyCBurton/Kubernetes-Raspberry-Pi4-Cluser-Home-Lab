@@ -1,5 +1,5 @@
 # Introduction
-Having Prometheus and Grafana on your Raspberry Pi is super important. Using Helm charts that are provided with Kubernetes, we can achieve this.
+Having Prometheus and Grafana on your Raspberry Pi is a great way to monitor the usage on your cluster. Using Helm charts that are provided with Kubernetes, we can achieve this. My local machine is going to be using MacOS which has the Kubectl. 
 
 # Cluster-monitoring
 Following this [repo](https://github.com/carlosedp/cluster-monitoring), We can have an optimized Grafana-dashboard for our raspberry pi cluster. The first step is to clone the repo using the command below
@@ -50,7 +50,7 @@ $ kubectl apply -f manifests/setup/
 $ kubectl apply -f manifests/
 ```
 # The process of installing Grafana using make
-Using the command `` kubectl apply -f manifests/setup/ ``, it creates a namespace called monitoring which is deploying Grafana to the pods 
+Using the command `` kubectl apply -f manifests/setup/ ``, it creates a namespace called monitoring which is deploying Grafana to the pods. 
 
 Using the command ``kubectl get pods -n monitoring `` you can see the output below that everything is deployed
 ```
@@ -79,7 +79,7 @@ using the command below allows you to see the host name
 ```
 kubectl get ingress -n monitoring
 ```
-Ho the the address and it allows you to see what is there. 
+
 
 
 
