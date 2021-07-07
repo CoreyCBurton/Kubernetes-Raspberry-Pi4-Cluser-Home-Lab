@@ -6,7 +6,7 @@ In order for Kubernetes to work, we will have to modify the **cmdline.txt** by e
 ```
 net.ifnames=0 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=LABEL=writable rootfstype=ext4 elevator=deadline rootwait fixrtc
 ```
-Using the **nano** editor while in root or sudo, please add this code to the .txt file. 
+Using the **nano** or **Vim** editor while in root or sudo, please add this code to the .txt file. 
 ```
 cgroup_memory=1
 cgroup_enable=memory
