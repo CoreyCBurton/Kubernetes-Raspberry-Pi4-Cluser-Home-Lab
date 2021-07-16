@@ -18,7 +18,7 @@ network:
   renderer: networkd
   ethernets:
     eth0:
-     dhcp4: no
+     dhcp4: false
      addresses: [<ip address?]
      gateway4: <ip address>
      nameservers:
