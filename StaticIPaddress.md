@@ -3,8 +3,8 @@ By default, Ubuntu server LTS has DCHP enabled. This guide will have steps to se
 
 # ip -a 
 - It is important to see what adapter you are using through ``ip -a``. This will vary from person to person. In my situation. I am connected via eth0. 
-  - en3sop is also common. In the .yaml file, replace it with the adapter listed.
-  - This is how you can see what IP address you are using
+  - Take note what adapter the IP address is using. This is important for the .yaml file configuration.
+  - This is also how you can see what IP address you are using.
 
 # Netplan configuration
 - Go to the directory /etc/netplan.
