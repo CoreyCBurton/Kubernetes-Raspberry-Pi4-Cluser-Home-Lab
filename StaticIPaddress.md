@@ -1,17 +1,19 @@
 # Introduction
 By default, Ubuntu server LTS has DCHP enabled. This guide will have steps to set a static ip which is necessary to keep the kubectl synchronized with the IP addresses that where setup at the start. 
 
+# ip -a 
+- It is important to see what adapter you are using through ``ip -a``. This will vary from person to person. In my situation. I am connected via eth0. 
+  - en3sop is also common. In the .yaml file, replace it with the adapter listed.
+  - This is how you can see what IP address you are using
+
 # Netplan configuration
 - Go to the directory /etc/netplan.
-  - There should be some files listed. If there is a file such as ``50-cloud`` you can ignore this. 
-  - Make a new file using called ``01-network-manager.yaml``. Please note: The file has to start with a set of numbers and end with .yaml
-  - Use vim or nano to edit. It has to be in sudo privlege. 
-# ip -a 
-- It is important to see what adapter you are using through ip -a. This will vary from person to person. In my siutation, I am connected via eth0. 
-  - en3sop is also common. In the .yaml file, replace it with the adapter listed.
+  - There should be a file called ``50-cloud-init.yaml`` in this directory. 
+  - Make a new file using called ``01-network-manager.yaml``. **Please note:** The file has to start with a set of numbers like "01" and end with **.yaml**
+  - Use vim or nano to edit these files . It has to be in sudo privlege. 
 
 # Modifying .yaml file
-- Add the following lines below in ``01-network-manger.yaml`` in the ``/etc/netplan directory``.
+- Add the following lines below in ``01-network-manger.yaml`` and ``50-cloud-init.yaml`` in the ``/etc/netplan directory``.
 ```
 network:
   version: 2
