@@ -1,5 +1,5 @@
 # Introduction
-Now that you have the SD cards set up for Ubuntu 20.044.2 LTS and your Raspberry Pis on the platform, it is time to set up the server on each Raspberry Pi. 
+Now that you have the SD cards set up for Ubuntu 20.044.2 LTS and your Raspberry Pis on the platform, it is time to set up k3s.
 
 # Enabling cgroup memory 
 In order for Kubernetes to work, we will have to modify the **cmdline.txt** by enabling cgroup memory. The directroy for **cmdline.txt** is **boot/firmware/cmdline.txt**. To know you are in the right place, you should see the line of code below. Leave it there, you are going to add to it.
@@ -18,7 +18,7 @@ swapaccount=1
   - If you have a linux distribution such as Kali Linux, you can also use the command ``netdiscover``to find the addresses to each PI.
 
 # Setting the master node and SSH keys.
-Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next step is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts; the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys. The next step is to set up the cluster. 
+Once you have the IP address from all your Raspberry Pis, choose a main IP that will be the master node. The next step is too add the SSH keys to each Pi so when we set up the cluster, they can all connect and they are validated. On the master node, add each raspberry. First, you have to generate a SSH key with ``` ssh-keygen ```  and accept the prompts; the paraphrase is optional. After that, use ``` ssh-copy-id ubuntu@<ip> ``` on the three other Ips which will add the keys.
 
 # Renaming your Raspberry Pis. (optional)
 In order to keep everything in order, I recommend naming your Raspberry Pis. I named my masternode "Alpha" and continued labeling following "Beta,"Charile",and "Delta". **Alpha holds the kubeconfig while I also have one on my local macbook**. In order to do this, you have to go into root by typing the command `sudo su`. type the command below to change the name. 
