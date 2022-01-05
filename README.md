@@ -1,15 +1,5 @@
-# Kubernetes-Raspberry-Pi4-Cluster-Home-Lab
-
-# The introduction
-Having a homelab will further my knowledge in networking and especially Kubernetes. It is great how you can have a home network and experiment without an enterprise system! What is even better is that you can use Raspberry Pis and they are affordable. This repo is going to document the journey while also explaining what I have learned. Let the fun begin. 
-
-# What I want to accomplish with this homelab
-- How to set up a network
-- Use Linux to navigate and setup Kubernetes 
-- Learn key concepts of Kubernetes 
-- Make sure my network is secure
-- The pro and cons of a cluster server
-- How I can improve my homelab and move on to a bigger system. 
+# Introduction
+Having a homelab is important, and there are many ways to set one up for what's needed to be done. Kubernetes is a powerful container orchestration utlity and it's a skill I would like to have. Approachng this, there are multiple ways to create a cluster so that Kubernetes can operate. There's always the cloud which will utilize AWS or Azure which is great, but I wanted hands on equipment. Raspberry Pis were great for this. After setting up Kubectl and relized that I achieved the cluster, it was a matter of learning more about what I can do with it. I learned alot and most importantly, I have a homelan where I can work on future projects. 
 
 # Index
 - Intial set up 
