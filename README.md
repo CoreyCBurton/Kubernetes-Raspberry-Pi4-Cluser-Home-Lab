@@ -1,5 +1,5 @@
 # Introduction
-This repo shows the process on how to create a Kubernetes (k3s) cluster out of Raspberry Pis. Through the hardware set up and creating the Kubectl config, the cluster can be utilized. 
+This repo shows the process of how to create a Kubernetes (k3s) cluster out of Raspberry Pis. Through the hardware setup and creating the Kubectl config, the cluster can be utilized. 
 
 # The reason behind this project
 Having a home lab is important and there are many ways to set one up for what's needed to be done. Kubernetes is a powerful container orchestration utility and it's a skill I would like to have. Approaching this, there are multiple ways to create a cluster so that Kubernetes can operate. There's always the cloud that will utilize AWS or Azure which is great, but I wanted hands-on equipment. Raspberry Pis were great for this. After setting up Kubectl and realizing that I achieved the cluster, it was a matter of learning more about what I can do with it. I learned a lot and most importantly, I have a home lab that can host future projects.
